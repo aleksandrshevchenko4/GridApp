@@ -257,5 +257,10 @@ namespace GridApp
         {
             throw new NotImplementedException();
         }
+
+        public static implicit operator Page(TripsTrapsTrull v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

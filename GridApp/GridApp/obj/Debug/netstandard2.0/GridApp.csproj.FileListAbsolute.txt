@@ -5,3 +5,11 @@ C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\Trip
 C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\GridApp.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\GridApp.AssemblyInfo.cs
 C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\GridApp.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\bin\Debug\netstandard2.0\GridApp.deps.json
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\bin\Debug\netstandard2.0\GridApp.dll
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\bin\Debug\netstandard2.0\ref\GridApp.dll
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\bin\Debug\netstandard2.0\GridApp.pdb
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\GridApp.dll
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\ref\GridApp.dll
+C:\Users\User\source\repos\GridApp\GridApp\GridApp\obj\Debug\netstandard2.0\GridApp.pdb
