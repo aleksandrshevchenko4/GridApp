@@ -19,7 +19,6 @@ namespace GridA
             {
                 grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-
             }
 
             for (int i = 0; i < 5; i++)
@@ -35,23 +34,24 @@ namespace GridA
             }
             Content = grid;
         }
+
         private void Tap_Tapped(object sender, EventArgs e)
         {
-
             BoxView box = sender as BoxView;
-
-            if (box.Color == Color.AliceBlue)
+            if (box.Color == Color.Black)
             {
-                box.Color = Color.YellowGreen;
+                box.Color = Color.LightBlue;
             }
             else if (box.Color == Color.FromRgb(200, 100, 50))
             {
-                box.Color = Color.AliceBlue;
+                box.Color = Color.Black;
             }
-            else if (box.Color == Color.YellowGreen)
+            else if (box.Color == Color.LightBlue)
             {
                 box.Color = Color.FromRgb(200, 100, 50);
             }
+
         }
     }
 }
+

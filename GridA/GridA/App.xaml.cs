@@ -10,7 +10,7 @@ namespace GridA
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TripsTrapsTrull();
         }
 
         protected override void OnStart()
