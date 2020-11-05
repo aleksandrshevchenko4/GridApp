@@ -178,7 +178,7 @@ namespace GridA
                 winner = "sin";
             }
 
-            // Вертикально центер
+            // Вертикально центр
             if (map[0, 1] == 1 && map[1, 1] == 1 && map[2, 1] == 1)
             {
                 winner = "pun";
