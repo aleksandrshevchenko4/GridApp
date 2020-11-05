@@ -56,7 +56,7 @@ namespace GridA
             {
                 BackgroundColor = Color.Black,
                 TextColor = Color.White,
-                Text = "New game"
+                Text = "Uus mäng"
             };
             AbsoluteLayout.SetLayoutBounds(newGame, new Rectangle(0.9, 0.02, 150, 50));
             AbsoluteLayout.SetLayoutFlags(newGame, AbsoluteLayoutFlags.PositionProportional);
@@ -67,7 +67,7 @@ namespace GridA
             {
                 BackgroundColor = Color.Black,
                 TextColor = Color.White,
-                Text = "X või null"
+                Text = "Pun või sin"
             };
             AbsoluteLayout.SetLayoutBounds(XO, new Rectangle(0.1, 0.02, 150, 50));
             AbsoluteLayout.SetLayoutFlags(XO, AbsoluteLayoutFlags.PositionProportional);
@@ -91,7 +91,7 @@ namespace GridA
         }
         public async void FirstPlayer()
         {
-            string FirstPlayer = await DisplayPromptAsync("Who is first?", "Zero - 1, cross - 2",
+            string FirstPlayer = await DisplayPromptAsync("Kes on esimene?", "Punane - 1, Sinine - 2",
                 initialValue: "1",
                 maxLength: 1,
                 keyboard: Keyboard.Numeric);
@@ -135,19 +135,19 @@ namespace GridA
 
             if (box.Color == Color.FromRgb(150, 150, 150) && First)
             {
-                box.Color = Color.FromRgb(128, 57, 30);
+                box.Color = Color.FromRgb(150, 0, 0);
                 First = false;
                 map[Grid.GetRow(box), Grid.GetColumn(box)] = 0;
             }
             else if (box.Color == Color.FromRgb(150, 150, 150) && !First)
             {
-                box.Color = Color.FromRgb(224, 123, 57);
+                box.Color = Color.FromRgb(0, 0, 125);
                 First = true;
                 map[Grid.GetRow(box), Grid.GetColumn(box)] = 1;
             }
             else
             {
-                DisplayAlert("Warning!", "The enemy has already cut this field.", "OK");
+                DisplayAlert("Hoiatus!", "Vaenlane on selle põllu juba ära lõiganud.", "OK");
             }
             WHO();
             CheckWinner();
@@ -156,11 +156,11 @@ namespace GridA
         {
             if (First == true)
             {
-                WhoFirst.Text = "Zero move";
+                WhoFirst.Text = "Punane liikub";
             }
             else if (First == false)
             {
-                WhoFirst.Text = "Cross move";
+                WhoFirst.Text = "Sinine liikub";
             }
         }
 
@@ -171,101 +171,101 @@ namespace GridA
             // Вертикально слево
             if (map[0, 0] == 1 && map[1, 0] == 1 && map[2, 0] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[0, 0] == 0 && map[1, 0] == 0 && map[2, 0] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Вертикально центер
             if (map[0, 1] == 1 && map[1, 1] == 1 && map[2, 1] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[0, 1] == 0 && map[1, 1] == 0 && map[2, 1] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Вертикально справа
             if (map[0, 2] == 1 && map[1, 2] == 1 && map[2, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[0, 2] == 0 && map[1, 2] == 0 && map[2, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Горизонтально верх
             if (map[0, 0] == 1 && map[0, 1] == 1 && map[0, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[0, 0] == 0 && map[0, 1] == 0 && map[0, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
-            // Горизонтально центер
+            // Горизонтально центр
             if (map[1, 0] == 1 && map[1, 1] == 1 && map[1, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[1, 0] == 0 && map[1, 1] == 0 && map[1, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Горизонтально низ
             if (map[2, 0] == 1 && map[2, 1] == 1 && map[2, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[2, 0] == 0 && map[2, 1] == 0 && map[2, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Диагонально с верхнего левого края до нижнего правого края
             if (map[0, 0] == 1 && map[1, 1] == 1 && map[2, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[0, 0] == 0 && map[1, 1] == 0 && map[2, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             // Диагонально с верхнего правого края до нижнего левого
             if (map[2, 0] == 1 && map[1, 1] == 1 && map[0, 2] == 1)
             {
-                winner = "cross";
+                winner = "pun";
             }
             else if (map[2, 0] == 0 && map[1, 1] == 0 && map[0, 2] == 0)
             {
-                winner = "zero";
+                winner = "sin";
             }
 
             return winner;
         }
         public void CheckWinner()
         {
-            if (Winner() == "cross")
+            if (Winner() == "pun")
             {
-                WhoFirst.Text = "Cross Won !";
-                restartCross();
+                WhoFirst.Text = "Punane võitis !";
+                restartPun();
             }
-            else if (Winner() == "zero")
+            else if (Winner() == "sin")
             {
-                WhoFirst.Text = "Zero Won !";
-                restartZero();
+                WhoFirst.Text = "Sinine võitis !";
+                restartSin();
             }
         }
-        private async void restartCross()
+        private async void restartPun()
         {
-            string Restart = await DisplayPromptAsync("Restart", "Cross Won! Do you want to play again? Yes - 1, No - 2",
+            string Restart = await DisplayPromptAsync("Restart", "Sinine võitis! Kas te tahate mängida veel kord? Yah - 1, Ei - 2",
                 initialValue: "1",
                 maxLength: 1,
                 keyboard: Keyboard.Numeric);
@@ -277,9 +277,9 @@ namespace GridA
             }
 
         }
-        private async void restartZero()
+        private async void restartSin()
         {
-            string Restart = await DisplayPromptAsync("Restart", "Zero Won! Do you want to play again? Yes - 1, No - 2",
+            string Restart = await DisplayPromptAsync("Restart", "Punane võitis! Kas te tahate mängida veel kord? Yah - 1, Ei - 2",
                 initialValue: "1",
                 maxLength: 1,
                 keyboard: Keyboard.Numeric);
